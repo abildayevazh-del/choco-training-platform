@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как поставить блюдо на стоп-лист (Choco Business)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .guide-container {
+            max-width: 740px;
+            margin: 40px auto;
+            background: white;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FE2C55;
+        }
+        .logo span { color: #1a1a1a; }
+        .btn-print {
+            background: #FE2C55;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-print:hover { background: #e0254c; }
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .goal-block {
+            background: #fef2f4;
+            border-left: 4px solid #FE2C55;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 32px;
+            font-size: 15px;
+            color: #333;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .section-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        .step-number {
+            background: #FE2C55;
+            color: white;
+            min-width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 15px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .step-content {
+            font-size: 15px;
+            color: #333;
+        }
+        .step-content b {
+            color: #1a1a1a;
+        }
+        .section-divider {
+            border: none;
+            border-top: 2px solid #f0f0f0;
+            margin: 32px 0;
+        }
+        .warning-block {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 20px 24px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 32px;
+        }
+        .warning-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #e65100;
+            margin-bottom: 12px;
+        }
+        .warning-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #444;
+        }
+        .warning-item b { color: #1a1a1a; }
+        .warning-item:last-child { margin-bottom: 0; }
+        @media print {
+            body { background: white; }
+            .guide-container { box-shadow: none; margin: 0; padding: 24px; }
+            .btn-print { display: none; }
+        }
+        @media (max-width: 600px) {
+            .guide-container { margin: 16px; padding: 24px; }
+            h1 { font-size: 20px; }
+            .header { flex-direction: column; gap: 12px; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <div class="header">
+            <div class="logo">Choco <span>Business</span></div>
+            <button class="btn-print" onclick="window.print()">Скачать PDF / Печать</button>
+        </div>
+
+        <h1>Как поставить блюдо на стоп-лист</h1>
+        <p class="subtitle">Инструкция для мобильного приложения и ноутбука</p>
+
+        <div class="goal-block">
+            <b>Цель:</b> Своевременно скрывать позиции, которые закончились, чтобы гости не могли их заказать, а персоналу не приходилось делать возвраты.
+        </div>
+
+        <h3 class="section-title">Способ 1: Через мобильное приложение</h3>
+        <p class="section-subtitle">Этот способ удобен, когда нужно быстро внести изменения прямо «в полях» с телефона.</p>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <b>Вход в раздел:</b> На главном экране приложения нажмите на плитку «Предзаказ».
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <b>Выбор филиала:</b> Зайдите в нужный филиал (например, Express).
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <b>Настройки:</b> В верхнем правом углу нажмите на иконку шестеренки («Настройки»).
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <b>Стоп-лист:</b> В открывшемся меню выберите пункт «Стоп-лист».
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+                <b>Выбор блюда:</b> Найдите в списке нужное блюдо (например, «ЯЙЦО ОТВАРНОЕ») и нажмите на пустой квадрат справа, чтобы появилась галочка.
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">6</div>
+            <div class="step-content">
+                <b>Установка времени:</b> Нажмите красную кнопку «В стоп-лист». В появившемся окне выберите период (например, «До конца дня») и подтвердите действие.
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3 class="section-title">Способ 2: Через ноутбук</h3>
+        <p class="section-subtitle">Удобно использовать при работе за компьютером для управления всем меню заведения.</p>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <b>Меню инструментов:</b> В левом боковом меню выберите раздел «Инструменты» → «Стоп-лист».
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <b>Добавление:</b> Нажмите красную кнопку «Добавить в стоп-лист» в верхнем углу экрана.
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <b>Заведение:</b> Выберите нужное заведение из выпадающего списка и нажмите «Далее».
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <b>Позиция:</b> Отметьте нужное блюдо (например, «Зеленый чай») галочкой и нажмите «Далее».
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+                <b>Сохранение:</b> Установите период (например, «15 минут») и нажмите кнопку «Сохранить».
+            </div>
+        </div>
+
+        <div class="warning-block">
+            <div class="warning-title">Важные правила (Прочитайте обязательно!)</div>
+            <div class="warning-item">
+                <b>Дублирование в кассе:</b> ОБЯЗАТЕЛЬНО повторите те же действия в кассовой системе! Обновление в Choco не меняет данные в вашей внутренней кассе автоматически.
+            </div>
+            <div class="warning-item">
+                <b>Последствия:</b> Если забыть один из шагов (не обновить в приложении или в кассе) — гость закажет блюдо, которого по факту нет.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

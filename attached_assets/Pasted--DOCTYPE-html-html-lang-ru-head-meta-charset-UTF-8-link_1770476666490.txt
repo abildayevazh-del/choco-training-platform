@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Инструкция: Стоп-лист Choco</title>
+    <style>
+        .guide-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .step-number {
+            background: #FE2C55;
+            color: white;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        @media print {
+            .no-print { display: none; }
+            .guide-container { box-shadow: none; margin: 0; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="guide-container">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="color: #FE2C55;">Choco Business</h1>
+        <button class="btn-choco no-print" onclick="window.print()">Скачать PDF / Печать</button>
+    </div>
+    
+    <hr>
+
+    <h2>Шпаргалка: Как поставить блюдо на стоп</h2>
+    <p><i>Инструкция для веб-версии личного кабинета.</i></p>
+
+    <div class="step">
+        <p><span class="step-number">1</span> <b>Раздел Инструменты:</b> В левом меню выбери «Инструменты» → «Стоп-лист».</p>
+    </div>
+    <div class="step">
+        <p><span class="step-number">2</span> <b>Добавление:</b> Нажми красную кнопку «Добавить в стоп-лист» в верхнем углу.</p>
+    </div>
+    <div class="step">
+        <p><span class="step-number">3</span> <b>Выбор точки:</b> Выбери свое заведение из списка и нажми «Далее».</p>
+    </div>
+    <div class="step">
+        <p><span class="step-number">4</span> <b>Выбор блюда:</b> Найди позицию в списке и отметь её галочкой.</p>
+    </div>
+    <div class="step">
+        <p><span class="step-number">5</span> <b>Сохранение:</b> Выбери время (например, «До конца дня») и нажми «Сохранить».</p>
+    </div>
+
+    <hr>
+
+    <div style="background: #fdf2f4; padding: 20px; border-radius: 12px;">
+        <h3 style="margin-top: 0;">💡 Важно помнить:</h3>
+        <ul>
+            <li>Блюдо исчезает из приложения **мгновенно**.</li>
+            <li>Если блюдо снова появилось — удали его из списка стопов вручную.</li>
+            <li>Ставь на стоп сразу, как только позиция закончилась на кухне.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

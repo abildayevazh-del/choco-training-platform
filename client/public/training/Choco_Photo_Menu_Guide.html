@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как загрузить фотографии в электронное меню (Choco Business)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .guide-container {
+            max-width: 740px;
+            margin: 40px auto;
+            background: white;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FE2C55;
+        }
+        .logo span { color: #1a1a1a; }
+        .btn-print {
+            background: #FE2C55;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-print:hover { background: #e0254c; }
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .goal-block {
+            background: #fef2f4;
+            border-left: 4px solid #FE2C55;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 32px;
+            font-size: 15px;
+            color: #333;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .section-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        .step-number {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: #FE2C55;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+        .step-desc {
+            font-size: 14px;
+            color: #555;
+        }
+        .tip-block {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #333;
+        }
+        .tip-block strong {
+            color: #16a34a;
+        }
+        .warning-block {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #333;
+        }
+        .warning-block strong {
+            color: #d97706;
+        }
+        .info-block {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #333;
+        }
+        .info-block strong {
+            color: #2563eb;
+        }
+        .checklist {
+            margin-bottom: 32px;
+        }
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+        .checklist-item:last-child { border-bottom: none; }
+        .check-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        .specs-table th {
+            background: #fef2f4;
+            text-align: left;
+            padding: 10px 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            border-bottom: 2px solid #FE2C55;
+        }
+        .specs-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f0f0f0;
+            color: #333;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #f0f0f0;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+        .formula-block {
+            background: #fef2f4;
+            border: 2px solid #FE2C55;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .formula-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #FE2C55;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .formula-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .formula-text span {
+            color: #FE2C55;
+        }
+        @media print {
+            body { background: white; }
+            .guide-container { box-shadow: none; margin: 0; padding: 32px; }
+            .btn-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <div class="header">
+            <div class="logo">Choco <span>Бизнес</span></div>
+            <button class="btn-print" onclick="window.print()">Скачать PDF</button>
+        </div>
+
+        <h1>Как загрузить фотографии в электронное меню</h1>
+        <div class="subtitle">Пошаговая инструкция по загрузке и обновлению фотографий блюд в электронном меню Choco Бизнес</div>
+
+        <div class="goal-block">
+            <strong>Цель:</strong> Научиться загружать качественные фотографии блюд в электронное меню, чтобы увеличить привлекательность и конверсию заказов.
+        </div>
+
+        <div class="formula-block">
+            <div class="formula-label">Формула</div>
+            <div class="formula-text">
+                Меню <span>→</span> Электронное меню <span>→</span> Выбрать блюдо <span>→</span> Загрузить фото <span>→</span> Сохранить
+            </div>
+        </div>
+
+        <div class="info-block">
+            <strong>Почему это важно:</strong> Красивые фотографии блюд увеличивают количество заказов на 30–40%. Гости чаще выбирают позиции с качественными изображениями в QR-меню.
+        </div>
+
+        <div class="section-title">Пошаговый алгоритм</div>
+        <div class="section-subtitle">Следуйте этим шагам для загрузки фотографий</div>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <div class="step-title">Откройте раздел «Электронное меню»</div>
+                <div class="step-desc">В боковом меню Choco Бизнес выберите раздел «Электронное меню». Здесь отображаются все категории и позиции вашего меню.</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <div class="step-title">Найдите нужную категорию блюд</div>
+                <div class="step-desc">Перейдите в категорию, где находится блюдо: завтраки, супы, горячее, десерты, напитки и т.д. Используйте поиск для быстрого нахождения.</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <div class="step-title">Выберите блюдо</div>
+                <div class="step-desc">Нажмите на карточку блюда, к которому хотите добавить или обновить фотографию. Откроется окно редактирования.</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <div class="step-title">Нажмите на область загрузки изображения</div>
+                <div class="step-desc">В верхней части карточки блюда находится область для фото. Если фото ещё нет — будет значок камеры. Если есть — текущее изображение. Нажмите на эту область.</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+                <div class="step-title">Выберите фотографию из галереи или сделайте новое фото</div>
+                <div class="step-desc">Загрузите готовое фото с устройства или сделайте снимок камерой прямо из приложения. Поддерживаются форматы JPG и PNG.</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">6</div>
+            <div class="step-content">
+                <div class="step-title">Обрежьте или отредактируйте фото</div>
+                <div class="step-desc">При необходимости используйте встроенный редактор для обрезки изображения. Фото автоматически подгоняется под нужный размер.</div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">7</div>
+            <div class="step-content">
+                <div class="step-title">Нажмите «Сохранить»</div>
+                <div class="step-desc">После загрузки и редактирования нажмите кнопку «Сохранить». Фотография мгновенно отобразится в QR-меню для гостей.</div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top: 32px;">Требования к фотографиям</div>
+        <div class="section-subtitle">Соблюдайте эти параметры для лучшего отображения</div>
+
+        <table class="specs-table">
+            <thead>
+                <tr>
+                    <th>Параметр</th>
+                    <th>Рекомендация</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Минимальный размер</td>
+                    <td>800 x 600 пикселей</td>
+                </tr>
+                <tr>
+                    <td>Рекомендуемый размер</td>
+                    <td>1200 x 900 пикселей</td>
+                </tr>
+                <tr>
+                    <td>Формат файла</td>
+                    <td>JPG или PNG</td>
+                </tr>
+                <tr>
+                    <td>Максимальный размер файла</td>
+                    <td>5 МБ</td>
+                </tr>
+                <tr>
+                    <td>Соотношение сторон</td>
+                    <td>4:3 (горизонтальное)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-block">
+            <strong>Советы для качественных фото:</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+                <li>Используйте естественное или студийное освещение</li>
+                <li>Снимайте сверху (flat lay) или под углом 45 градусов</li>
+                <li>Фон должен быть чистым и нейтральным</li>
+                <li>Блюдо должно занимать 70–80% кадра</li>
+                <li>Добавьте декор: зелень, соусник, столовые приборы</li>
+                <li>Не используйте фильтры, искажающие цвет блюда</li>
+            </ul>
+        </div>
+
+        <div class="warning-block">
+            <strong>Частые ошибки:</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+                <li>Тёмное или размытое фото — отпугивает гостей</li>
+                <li>Фото с телефона при плохом освещении</li>
+                <li>Слишком маленькое изображение — будет пиксельным в меню</li>
+                <li>Фото с посторонними предметами в кадре</li>
+                <li>Использование стоковых фотографий вместо реальных блюд</li>
+            </ul>
+        </div>
+
+        <div class="section-title" style="margin-top: 32px;">Когда пригодится</div>
+        <div class="section-subtitle">Ситуации, в которых необходимо обновлять фотографии</div>
+
+        <div class="checklist">
+            <div class="checklist-item">
+                <div class="check-box"></div>
+                <span>При добавлении новых блюд в меню</span>
+            </div>
+            <div class="checklist-item">
+                <div class="check-box"></div>
+                <span>При обновлении фотографий сезонных позиций</span>
+            </div>
+            <div class="checklist-item">
+                <div class="check-box"></div>
+                <span>При запуске акций и специальных предложений</span>
+            </div>
+            <div class="checklist-item">
+                <div class="check-box"></div>
+                <span>Для улучшения конверсии заказов через QR-меню</span>
+            </div>
+            <div class="checklist-item">
+                <div class="check-box"></div>
+                <span>После ребрендинга или изменения подачи блюда</span>
+            </div>
+            <div class="checklist-item">
+                <div class="check-box"></div>
+                <span>Если текущее фото получило негативный отзыв от гостей</span>
+            </div>
+        </div>
+
+        <div class="info-block">
+            <strong>Полезно знать:</strong> Фотографии обновляются в QR-меню мгновенно после сохранения. Гостям не нужно повторно сканировать QR-код — они увидят новое фото при следующем открытии меню.
+        </div>
+
+        <div class="footer">
+            Choco Бизнес — Академия<br>
+            Инструкция: Как загрузить фотографии в электронное меню
+        </div>
+    </div>
+</body>
+</html>

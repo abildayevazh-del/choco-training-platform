@@ -1,0 +1,149 @@
+{
+  "roles": [
+    { "id": "owner", "name": "Владелец", "icon": "Crown" },
+    { "id": "manager", "name": "Управляющий", "icon": "Users" },
+    { "id": "admin", "name": "Администратор", "icon": "Settings" },
+    { "id": "cashier", "name": "Кассир", "icon": "Calculator" },
+    { "id": "waiter", "name": "Официант", "icon": "UtensilsCrossed" },
+    { "id": "runner", "name": "Раннер", "icon": "Footprints" },
+    { "id": "accountant", "name": "Бухгалтер", "icon": "FileText" },
+    { "id": "marketer", "name": "Маркетолог", "icon": "TrendingUp" }
+  ],
+  "products": [
+    { "id": "order_no_waiter", "name": "Заказ без официанта", "icon": "QrCode" },
+    { "id": "order_no_cashier", "name": "Заказ без кассира", "icon": "CreditCard" },
+    { "id": "bill_pull", "name": "Подтягивание счета", "icon": "Receipt" },
+    { "id": "kiosk", "name": "Киоск самообслуживания", "icon": "Monitor" }
+  ],
+  "modules": {
+    "runner": {
+      "title": "Онбординг раннера",
+      "description": "Пройди 5 модулей, чтобы быть готовым к смене",
+      "roles": ["runner"],
+      "products": ["order_no_waiter", "order_no_cashier"],
+      "blocks": [
+        {
+          "id": "module1",
+          "number": 1,
+          "title": "Зачем тебе QR? (Реальная выгода)",
+          "video": "/training/assets/videos/module1.mp4",
+          "duration": "45 сек",
+          "points": 10,
+          "content": "QR-заказы — это твой лучший друг на смене!\n\nПреимущества для тебя:\n• Больше чаевых — гости довольны быстрым обслуживанием\n• Меньше ошибок — всё записано в системе\n• Меньше беготни — знаешь, что готово\n• Больше времени на качественный сервис",
+          "quiz": {
+            "id": "m1q1",
+            "question": "Что ты получишь от QR?",
+            "answers": ["Больше чаевых", "Меньше ошибок", "Оба варианта"],
+            "correct": 2,
+            "consequence": "Если не понимать выгоды QR, мотивация работать с системой падает — а с ней и чаевые"
+          }
+        },
+        {
+          "id": "module2",
+          "number": 2,
+          "title": "Гость сканирует QR — что видит?",
+          "video": "/training/assets/videos/module2.mp4",
+          "duration": "60 сек",
+          "points": 10,
+          "content": "Путь гостя очень простой:\n\n1. Гость сканирует QR на столе\n2. Открывает меню в телефоне\n3. Выбирает блюда, добавляет в корзину\n4. Оплачивает онлайн\n5. Получает номер заказа #123\n6. Ты видишь заказ в системе и несёшь",
+          "quiz": {
+            "id": "m2q1",
+            "question": "Что получает гость после оплаты?",
+            "answers": ["Ничего", "Номер заказа #123", "Счёт на бумаге"],
+            "correct": 1,
+            "consequence": "Если не знать, что получает гость, ты не сможешь помочь ему при вопросах"
+          }
+        },
+        {
+          "id": "module3",
+          "number": 3,
+          "title": "Заказ на экране — что делать?",
+          "video": "/training/assets/videos/module3.mp4",
+          "duration": "90 сек",
+          "points": 10,
+          "content": "Твоя работа на смене:\n\n1. Смотри экран SR — там видны готовые заказы\n2. Бери заказ с номером и столом\n3. Относи гостю\n4. Отмечай выдачу в системе\n\nВсё! Никаких блокнотов и путаницы.",
+          "quiz": {
+            "id": "m3q1",
+            "question": "Где ты видишь готовые заказы?",
+            "answers": ["Спрашиваю на кухне", "Смотрю в экране SR", "Жду звонка"],
+            "correct": 1,
+            "consequence": "Если искать заказы вручную, ты потеряешь 5-10 минут на каждом заказе"
+          }
+        },
+        {
+          "id": "module4",
+          "number": 4,
+          "title": "Гость спрашивает — ты отвечаешь!",
+          "video": "/training/assets/videos/module4.mp4",
+          "duration": "60 сек",
+          "points": 10,
+          "content": "Гости часто спрашивают:\n\n«Мой заказ дошёл?» → Покажи в SR статус\n«Где мой заказ?» → Проверь готовность в системе\n«Как платить?» → Объясни про QR-оплату\n\nВсегда отвечай уверенно — у тебя есть вся информация!",
+          "quiz": {
+            "id": "m4q1",
+            "question": "Гость спрашивает про свой заказ. Что делаешь?",
+            "answers": ["Иду на кухню", "Показываю статус в SR", "Говорю подождать"],
+            "correct": 1,
+            "consequence": "Если не проверить в SR, ты дашь гостю неточную информацию — он будет недоволен"
+          }
+        },
+        {
+          "id": "module5",
+          "number": 5,
+          "title": "Что-то пошло не так — не паникуй!",
+          "video": "/training/assets/videos/module5.mp4",
+          "duration": "90 сек",
+          "points": 10,
+          "content": "Что делать, если:\n\n• Заказ не появился → Проси гостя показать подтверждение оплаты\n• Заказ задерживается → Проверь статус, уточни на кухне\n• Гость недоволен → Выслушай, проверь в SR, позови старшего\n\nГлавное правило: сначала смотри в SR!",
+          "quiz": {
+            "id": "m5q1",
+            "question": "Главное правило при проблемах?",
+            "answers": ["Сразу звать старшего", "Сначала смотри в SR", "Решать самому"],
+            "correct": 1,
+            "consequence": "Если не заглянуть в SR первым делом, ты потеряешь время и нервы"
+          }
+        }
+      ],
+      "certificate": {
+        "title": "Сертификат раннера SR",
+        "description": "Успешно пройден курс обучения работе с системой Smart Restaurant"
+      }
+    },
+    "waiter": {
+      "title": "Онбординг официанта",
+      "description": "Пройди обучение для работы с SR",
+      "roles": ["waiter"],
+      "products": ["order_no_waiter", "bill_pull"],
+      "blocks": [],
+      "certificate": {
+        "title": "Сертификат официанта SR",
+        "description": "Успешно пройден курс обучения"
+      }
+    },
+    "cashier": {
+      "title": "Онбординг кассира",
+      "description": "Пройди обучение для работы с кассой SR",
+      "roles": ["cashier"],
+      "products": ["order_no_cashier", "kiosk"],
+      "blocks": [],
+      "certificate": {
+        "title": "Сертификат кассира SR",
+        "description": "Успешно пройден курс обучения"
+      }
+    }
+  },
+  "gamification": {
+    "levels": [
+      { "level": 1, "name": "Новичок", "minPoints": 0, "badge": "beginner" },
+      { "level": 2, "name": "Ученик", "minPoints": 25, "badge": "learner" },
+      { "level": 3, "name": "Специалист", "minPoints": 50, "badge": "specialist" },
+      { "level": 4, "name": "Эксперт", "minPoints": 75, "badge": "expert" },
+      { "level": 5, "name": "Мастер", "minPoints": 100, "badge": "master" }
+    ],
+    "achievements": [
+      { "id": "first_block", "name": "Первый шаг", "description": "Завершите первый модуль", "points": 5 },
+      { "id": "all_quizzes", "name": "Отличник", "description": "Пройдите все тесты без ошибок", "points": 25 },
+      { "id": "speed_learner", "name": "Быстрый ученик", "description": "Завершите модуль за один день", "points": 10 },
+      { "id": "certified", "name": "Сертифицирован", "description": "Получите сертификат", "points": 50 }
+    ]
+  }
+}

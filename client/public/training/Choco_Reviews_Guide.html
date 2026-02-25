@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как отвечать на отзывы в Choco Business</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .guide-container {
+            max-width: 740px;
+            margin: 40px auto;
+            background: white;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        @media (max-width: 600px) {
+            .guide-container { margin: 16px; padding: 24px 20px; }
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FE2C55;
+        }
+        .logo span { color: #1a1a1a; }
+        .btn-print {
+            background: #FE2C55;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-print:hover { background: #e0254c; }
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .rule-block {
+            background: #fef2f4;
+            border-left: 4px solid #FE2C55;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 32px;
+            font-size: 15px;
+            color: #333;
+        }
+        .rule-block strong { color: #FE2C55; }
+        .section {
+            margin-bottom: 28px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title .icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+        .icon-search { background: #e8f5e9; }
+        .icon-positive { background: #e3f2fd; }
+        .icon-negative { background: #fce4ec; }
+        .icon-important { background: #fff3e0; }
+        .section-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+        .step-list {
+            list-style: none;
+            padding: 0;
+        }
+        .step-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            background: #fafafa;
+            border-radius: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .step-num {
+            background: #FE2C55;
+            color: white;
+            min-width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .step-bullet {
+            color: #FE2C55;
+            font-size: 18px;
+            line-height: 1.3;
+            flex-shrink: 0;
+        }
+        .highlight {
+            background: #FE2C55;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+        .warning-block {
+            background: #fff8e1;
+            border-left: 4px solid #ffa000;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #5d4037;
+        }
+        .warning-block strong { color: #e65100; }
+        .divider {
+            height: 1px;
+            background: #f0f0f0;
+            margin: 28px 0;
+        }
+        .footer {
+            text-align: center;
+            color: #aaa;
+            font-size: 12px;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+        @media print {
+            body { background: white; }
+            .guide-container { box-shadow: none; margin: 0; padding: 24px; }
+            .btn-print { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container" id="guide-content">
+        <div class="header">
+            <div class="logo"><span>Choco</span> Business</div>
+            <button class="btn-print" onclick="downloadPDF()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Скачать PDF
+            </button>
+        </div>
+
+        <h1>Как отвечать на отзывы в Choco Business</h1>
+        <div class="subtitle">Инструкция для сотрудников</div>
+
+        <div class="rule-block">
+            <strong>Главное правило:</strong> Отвечать нужно на <strong>ВСЕ</strong> отзывы — и хорошие, и плохие. Это показывает гостям, что нам не все равно.
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <div class="icon icon-search">&#128270;</div>
+                Где найти отзывы
+            </div>
+            <ul class="step-list">
+                <li>
+                    <span class="step-num">1</span>
+                    <span>Отзывы можно сразу увидеть на главной странице <span class="highlight">Choco Бизнес</span> — нажми на блок <span class="highlight">Отзывы</span>.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <div class="section-title">
+                <div class="icon icon-positive">&#11088;</div>
+                Работа с положительными отзывами (4-5 звезд)
+            </div>
+            <ul class="step-list">
+                <li>
+                    <span class="step-num">1</span>
+                    <span>Проверь историю гостя (нажми на имя), чтобы увидеть, как часто он бывает.</span>
+                </li>
+                <li>
+                    <span class="step-num">2</span>
+                    <span>Нажми <span class="highlight">Связаться</span>.</span>
+                </li>
+                <li>
+                    <span class="step-num">3</span>
+                    <span>Напиши в WhatsApp: <em>«Спасибо за ваш отзыв! Будем рады видеть вас снова»</em>.</span>
+                </li>
+                <li>
+                    <span class="step-num">4</span>
+                    <span>Если гость очень лояльный — отправь ему купон на скидку или подарок.</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <div class="section-title">
+                <div class="icon icon-negative">&#9888;&#65039;</div>
+                Работа с негативными отзывами (1-3 звезды)
+            </div>
+            <ul class="step-list">
+                <li>
+                    <span class="step-bullet">&bull;</span>
+                    <span><strong>Не спорь в комментариях!</strong></span>
+                </li>
+                <li>
+                    <span class="step-num">1</span>
+                    <span>Сразу жми <span class="highlight">Связаться</span> &rarr; <span class="highlight">Написать на WhatsApp</span>.</span>
+                </li>
+                <li>
+                    <span class="step-num">2</span>
+                    <span>Уточни детали заказа (что именно не понравилось) и постарайся решить проблему (например, предложи замену блюда или бонус).</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section">
+            <div class="section-title">
+                <div class="icon icon-important">&#128221;</div>
+                Важно
+            </div>
+            <div class="warning-block">
+                <p><strong>Статистика</strong> (рейтинг и количество оценок) обновляется в реальном времени.</p>
+                <br>
+                <p>После решения вопроса <strong>отметь отзыв как «Обработан»</strong>, чтобы он не отвлекал тебя и коллег.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Choco Business &bull; Инструкция для сотрудников &bull; 2026
+        </div>
+    </div>
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

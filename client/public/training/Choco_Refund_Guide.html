@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как оформить возврат заказа (Choco Business)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #1a1a1a;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        .guide-container {
+            max-width: 740px;
+            margin: 40px auto;
+            background: white;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FE2C55;
+        }
+        .logo span { color: #1a1a1a; }
+        .btn-print {
+            background: #FE2C55;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-print:hover { background: #e0254c; }
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .subtitle {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+        .goal-block {
+            background: #fef2f4;
+            border-left: 4px solid #FE2C55;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-bottom: 32px;
+            font-size: 15px;
+            color: #333;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .section-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .step {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+        .step-number {
+            background: #FE2C55;
+            color: white;
+            min-width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 15px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .step-content {
+            font-size: 15px;
+            color: #333;
+        }
+        .step-content b {
+            color: #1a1a1a;
+        }
+        .section-divider {
+            border: none;
+            border-top: 2px solid #f0f0f0;
+            margin: 32px 0;
+        }
+        .warning-block {
+            background: #fff8e1;
+            border-left: 4px solid #ff9800;
+            padding: 20px 24px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 32px;
+        }
+        .warning-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #e65100;
+            margin-bottom: 12px;
+        }
+        .warning-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #444;
+        }
+        .warning-item b { color: #1a1a1a; }
+        .warning-item:last-child { margin-bottom: 0; }
+        .info-block {
+            background: #f0f7ff;
+            border-left: 4px solid #2196F3;
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+        .info-block b { color: #1565C0; }
+        .roles-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+        .roles-table th {
+            background: #fef2f4;
+            color: #FE2C55;
+            padding: 10px 16px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .roles-table td {
+            padding: 10px 16px;
+            font-size: 14px;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        @media print {
+            body { background: white; }
+            .guide-container { box-shadow: none; margin: 0; padding: 24px; }
+            .btn-print { display: none; }
+        }
+        @media (max-width: 600px) {
+            .guide-container { margin: 16px; padding: 24px; }
+            h1 { font-size: 20px; }
+            .header { flex-direction: column; gap: 12px; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-container">
+        <div class="header">
+            <div class="logo">Choco <span>Business</span></div>
+            <button class="btn-print" onclick="window.print()">Скачать PDF / Печать</button>
+        </div>
+
+        <h1>Как оформить возврат заказа</h1>
+        <div class="subtitle">Инструкция для сотрудников Choco Business</div>
+
+        <div class="goal-block">
+            <b>Цель:</b> Правильно оформить возврат средств клиенту через приложение, чтобы операция была зафиксирована в системе и отражена в отчётности.
+        </div>
+
+        <div class="section-title">Пошаговая инструкция</div>
+        <div class="section-subtitle">Через мобильное приложение Choco Business</div>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">На главном экране приложения нажмите на кнопку <b>«Меню»</b> в правом нижнем углу</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">В списке выберите пункт <b>«Касса»</b></div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">Перейдите в раздел <b>«Предзаказ»</b></div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">Выберите <b>своё заведение / филиал</b> из списка</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-content">Перейдите во вкладку <b>«Завершён»</b> — здесь отображаются все выполненные заказы</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">6</div>
+            <div class="step-content">Найдите нужный заказ и <b>нажмите на карточку</b>, чтобы открыть детали</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">7</div>
+            <div class="step-content">В деталях заказа нажмите <b>«Сделать возврат»</b></div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">8</div>
+            <div class="step-content">Выберите вид возврата: <b>«Отменить частично»</b> (для отдельных позиций) или <b>«Отменить полностью»</b> (для всего заказа)</div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="section-title">Виды возврата</div>
+
+        <div class="info-block">
+            <p><b>Частичный возврат</b> — отменяет одно или несколько блюд. Сумма за отменённое блюдо вернётся клиенту.</p>
+        </div>
+
+        <div class="info-block">
+            <p><b>Полный возврат</b> — заказ будет полностью отменён. Вся сумма заказа вернётся клиенту.</p>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="section-title">Кто может делать возвраты</div>
+
+        <table class="roles-table">
+            <tr>
+                <th>Роль</th>
+                <th>Доступ к возвратам</th>
+            </tr>
+            <tr>
+                <td><b>Администратор</b></td>
+                <td>Полный доступ к возвратам</td>
+            </tr>
+            <tr>
+                <td><b>Бариста / Кассир</b></td>
+                <td>Только с разрешения администратора</td>
+            </tr>
+            <tr>
+                <td><b>Официант</b></td>
+                <td>Не имеет права на возвраты</td>
+            </tr>
+        </table>
+
+        <div class="warning-block">
+            <div class="warning-title">Важные правила</div>
+            <div class="warning-item"><b>Всегда оформляйте возврат через систему</b> — не отдавайте наличные из кассы. Это не учитывается в отчётности и создаёт расхождения.</div>
+            <div class="warning-item"><b>Указывайте причину возврата</b> — без причины сложно анализировать, почему происходят возвраты.</div>
+            <div class="warning-item"><b>Возврат возможен только по оплаченным заказам</b> — система не позволит сделать возврат по неоплаченному заказу.</div>
+            <div class="warning-item"><b>Деньги возвращаются клиенту автоматически</b> — срок зависит от банка клиента (обычно 1-3 рабочих дня).</div>
+            <div class="warning-item"><b>Каждый возврат фиксируется в системе</b> — администратор видит полную историю всех возвратов.</div>
+        </div>
+    </div>
+</body>
+</html>
